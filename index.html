@@ -325,6 +325,7 @@
     const missing = [];
     if (!name) missing.push('이름');
     if (!phone) missing.push('전화번호');
+    else if (!/^01[0-9]{8,9}$/.test(phone.replace(/-/g, ''))) missing.push('전화번호 (올바른 형식으로 입력해주세요)');
     if (state.q8 === null) missing.push('현재 상황');
     if (state.q1.length === 0) missing.push('환경 세팅 현황');
     if (state.q2.length === 0) missing.push('서비스 분야');
