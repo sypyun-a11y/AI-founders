@@ -73,7 +73,7 @@
 <body>
 
 <div class="hero">
-  <div class="badge">🚀 AI FOUNDERS 1기</div>
+  <div class="badge">AI FOUNDERS 1기</div>
   <h1>이번엔 끝까지 같이 만들어 가봐요.<br><span>시작 전, 딱 5분만 답해주세요.</span></h1>
   <div class="progress-bar-wrap">
     <div class="progress-bar" id="progressBar" style="width: 0%"></div>
@@ -98,8 +98,8 @@
   <div class="card">
     <div class="q-label">현재 상황을 알려주세요. <span class="required">*</span></div>
     <div class="options" id="q8-options">
-      <label class="option-item" onclick="selectRadio('q8', 0)"><input type="radio" name="q8"><div class="option-text"><strong>💼 직장인 개발자</strong></div></label>
-      <label class="option-item" onclick="selectRadio('q8', 1)"><input type="radio" name="q8"><div class="option-text"><strong>📊 직장인 비개발자</strong></div></label>
+      <label class="option-item" onclick="selectRadio('q8', 0)"><input type="radio" name="q8"><div class="option-text"><strong>💼 직장인 (개발자)</strong></div></label>
+      <label class="option-item" onclick="selectRadio('q8', 1)"><input type="radio" name="q8"><div class="option-text"><strong>📊 직장인 (비개발자)</strong></div></label>
       <label class="option-item" onclick="selectRadio('q8', 2)"><input type="radio" name="q8"><div class="option-text"><strong>🏢 자영업자 / 프리랜서</strong></div></label>
       <label class="option-item" onclick="selectRadio('q8', 3)"><input type="radio" name="q8"><div class="option-text"><strong>🎓 학생 / 취업 준비 중</strong></div></label>
       <label class="option-item" onclick="selectRadio('q8', 4)"><input type="radio" name="q8"><div class="option-text"><strong>✨ 기타</strong></div></label>
@@ -107,23 +107,27 @@
   </div>
 
   <div class="card">
-    <div class="q-label">1. Claude Code, 어디까지 써보셨나요? <span class="required">*</span></div>
+    <div class="q-label">1. Claude Code로 서비스를 만들어본 경험이 있으신가요? <span class="required">*</span></div>
     <div class="check-list" id="q1-checks">
       <label class="check-item" onclick="toggleCheck('q1', 0, this)">
         <input type="checkbox">
-        <div class="check-text">1️⃣ Claude Code 설치해봤어요<small>Claude Code 앱 또는 CLI를 설치했어요</small></div>
+        <div class="check-text">1️⃣ Claude Code를 설치만 해봤어요<small>Claude Code 앱이나 CLI를 설치하는 것까지만 해봤어요</small></div>
       </label>
       <label class="check-item" onclick="toggleCheck('q1', 1, this)">
         <input type="checkbox">
-        <div class="check-text">2️⃣ VS Code 또는 터미널에서 실행해봤어요<small>직접 실행 환경을 세팅하고 띄워봤어요</small></div>
+        <div class="check-text">2️⃣ 코드 편집기(VS Code)나 명령어 창(터미널)에서 Claude Code를 직접 실행해봤어요<small>설치 후 실제로 켜서 명령어를 입력해봤어요</small></div>
       </label>
       <label class="check-item" onclick="toggleCheck('q1', 2, this)">
         <input type="checkbox">
-        <div class="check-text">3️⃣ 실제로 뭔가 만들거나 코드를 짜봤어요<small>Claude Code로 직접 결과물을 만들어본 경험이 있어요</small></div>
+        <div class="check-text">3️⃣ Claude Code로 간단한 웹페이지나 기능을 직접 만들어봤어요<small>완성도와 관계없이 결과물을 만들어본 경험이 있어요</small></div>
       </label>
-      <label class="check-item" onclick="toggleCheck('q1', 3, this)" id="q1-none">
+      <label class="check-item" onclick="toggleCheck('q1', 3, this)">
         <input type="checkbox">
-        <div class="check-text">🌱 아직 아무것도 안 해봤어요<small>처음 시작하시는 분도 환영해요!</small></div>
+        <div class="check-text">4️⃣ 만든 걸 링크로 공유하거나 다른 사람이 쓸 수 있게 배포해봤어요<small>Vercel, GitHub Pages 등으로 실제 배포까지 해봤어요</small></div>
+      </label>
+      <label class="check-item" onclick="toggleCheck('q1', 4, this)" id="q1-none">
+        <input type="checkbox">
+        <div class="check-text">🌱 Claude Code 자체를 처음 들어봐요<small>처음 시작하시는 분도 환영해요!</small></div>
       </label>
     </div>
   </div>
@@ -153,7 +157,7 @@
   <div class="card">
     <div class="q-label">4. 주로 작업 가능한 요일과 시간대를 선택해주세요. <span class="required">*</span></div>
     <div style="overflow-x:auto;">
-      <table class="time-grid" id="timeGrid">
+      <table class="time-grid">
         <thead>
           <tr>
             <th style="width:80px;"></th>
@@ -201,14 +205,14 @@
   <div class="card">
     <div class="q-label">5. 4주 뒤 나에게 해주고 싶은 말은? <span class="required">*</span></div>
     <div class="q-sub">수료식 날, 이 메시지를 여러분에게 다시 전달해드릴게요. ✉️</div>
-    <textarea class="text-input" id="q5-input" placeholder="예) &#8220;드디어 해냈네. 포기하지 않아서 고마워.&#8221;&#10;예) &#8220;4주 전 너, 잘 했어. 끝까지 버텨줘서 고마워.&#8221;" rows="3" oninput="updateProgress()"></textarea>
+    <textarea class="text-input" id="q5-input" placeholder="예) 4주 뒤엔 내가 만든 서비스 링크를 지인에게 공유하고 있을 거야.&#10;예) Claude Code로 아이디어를 바로 실행에 옮길 수 있는 사람이 되어 있을 거야." rows="3" oninput="updateProgress()"></textarea>
   </div>
 
   <div class="card">
-    <div class="q-label">6. 주에 최소 몇 시간을 투자하실 수 있으신가요? <span class="required">*</span></div>
+    <div class="q-label">6. 일주일에 투자할 수 있는 시간이 몇 시간이신가요? <span class="required">*</span></div>
     <div class="time-slider-wrap">
       <div class="time-display">
-        <div class="time-declaration" id="timeDeclaration">나는 주에 <span style="color:#6366f1;">5시간</span>을 투자하겠습니다.</div>
+        <div class="time-declaration" id="timeDeclaration">나는 일주일에 <span style="color:#6366f1;">5시간</span>을 투자하겠습니다.</div>
         <span class="time-desc" id="timeDesc">하루 약 40분 🙂</span>
       </div>
       <input type="range" id="timeSlider" min="2" max="20" value="5" step="1" oninput="updateTimeSlider()">
@@ -217,8 +221,8 @@
   </div>
 
   <div class="card">
-    <div class="q-label">7. 함께하는 동기분들께 한마디 부탁드려요. <span class="required">*</span></div>
-    <textarea class="text-input" id="q7-input" placeholder="예) &#8220;같이 끝까지 달려봐요! 🚀&#8221;&#10;예) &#8220;서로 자극 주고받으면서 4주 완주해요!&#8221;" rows="3" oninput="updateProgress()"></textarea>
+    <div class="q-label">7. 함께할 1기 동기들에게 응원의 한마디를 남겨주세요. <span class="required">*</span></div>
+    <textarea class="text-input" id="q7-input" placeholder="예) 같이 끝까지 달려봐요! 🚀&#10;예) 서로 자극 주고받으면서 4주 완주해요!" rows="3" oninput="updateProgress()"></textarea>
   </div>
 
   <div class="submit-wrap">
@@ -239,7 +243,7 @@
 
 <script>
   const WEBHOOK_URL = 'https://teamsparta-ax.app.n8n.cloud/webhook/031ace2c-54cc-457e-bf9a-2468d160cc30';
-  const q8Labels = ['💼 직장인 개발자', '📊 직장인 비개발자', '🏢 자영업자/프리랜서', '🎓 학생/취준', '✨ 기타'];
+  const q8Labels = ['💼 직장인 (개발자)', '📊 직장인 (비개발자)', '🏢 자영업자/프리랜서', '🎓 학생/취준', '✨ 기타'];
   const state = { q1: [], q2: [], q4: [], q8: null };
   const TOTAL = 9;
 
@@ -263,48 +267,50 @@
 
   function toggleCheck(qName, idx, el) {
     const checkbox = el.querySelector('input[type="checkbox"]');
-    const isNoneOption = (idx === 3);
-    const items = document.querySelectorAll(`#${qName}-checks .check-item`);
+    const isNoneOption = (idx === 4);
+    const items = document.querySelectorAll('#' + qName + '-checks .check-item');
     if (isNoneOption) {
       const wasSelected = el.classList.contains('selected');
-      items.forEach(item => { item.classList.remove('selected'); item.querySelector('input').checked = false; });
-      if (!wasSelected) { el.classList.add('selected'); checkbox.checked = true; state[qName] = ['아직 아무것도 해보지 않았어요']; }
+      items.forEach(function(item) { item.classList.remove('selected'); item.querySelector('input').checked = false; });
+      if (!wasSelected) { el.classList.add('selected'); checkbox.checked = true; state[qName] = ['Claude Code 자체를 처음 들어봐요']; }
       else { state[qName] = []; }
     } else {
-      const noneEl = document.getElementById(`${qName}-none`);
+      const noneEl = document.getElementById(qName + '-none');
       if (noneEl) { noneEl.classList.remove('selected'); noneEl.querySelector('input').checked = false; }
-      el.classList.toggle('selected'); checkbox.checked = el.classList.contains('selected');
-      const labels = ['Claude Code 설치', 'API 키 발급 및 연결', '외부 페이지 연결 경험'];
-      state[qName] = Array.from(document.querySelectorAll(`#${qName}-checks .check-item.selected`))
-        .map(item => { const i = Array.from(document.querySelectorAll(`#${qName}-checks .check-item`)).indexOf(item); return labels[i] || ''; }).filter(Boolean);
+      el.classList.toggle('selected');
+      checkbox.checked = el.classList.contains('selected');
+      const labels = ['Claude Code 설치', 'VS Code/터미널 실행', '웹페이지/기능 제작', '배포 경험'];
+      state[qName] = Array.from(document.querySelectorAll('#' + qName + '-checks .check-item.selected'))
+        .map(function(item) { var i = Array.from(document.querySelectorAll('#' + qName + '-checks .check-item')).indexOf(item); return labels[i] || ''; })
+        .filter(Boolean);
     }
     updateProgress();
   }
 
   function selectRadio(qName, idx) {
-    document.querySelectorAll(`#${qName}-options .option-item`).forEach((el, i) => el.classList.toggle('selected', i === idx));
+    document.querySelectorAll('#' + qName + '-options .option-item').forEach(function(el, i) { el.classList.toggle('selected', i === idx); });
     state[qName] = idx; updateProgress();
   }
 
   function selectTag(qName, btn, maxSelect) {
     const isSelected = btn.classList.contains('selected');
-    const selectedCount = document.querySelectorAll(`#${qName}-tags .tag-btn.selected`).length;
-    if (!isSelected && selectedCount >= maxSelect) { showToast(`최대 ${maxSelect}개까지 선택할 수 있어요!`); return; }
+    const selectedCount = document.querySelectorAll('#' + qName + '-tags .tag-btn.selected').length;
+    if (!isSelected && selectedCount >= maxSelect) { showToast('최대 ' + maxSelect + '개까지 선택할 수 있어요!'); return; }
     btn.classList.toggle('selected');
-    state[qName] = Array.from(document.querySelectorAll(`#${qName}-tags .tag-btn.selected`)).map(b => b.textContent.trim());
+    state[qName] = Array.from(document.querySelectorAll('#' + qName + '-tags .tag-btn.selected')).map(function(b) { return b.textContent.trim(); });
     updateProgress();
   }
 
   function toggleTime(btn, label) {
     btn.classList.toggle('selected');
     if (btn.classList.contains('selected')) { btn.textContent = '✓'; state.q4.push(label); }
-    else { btn.textContent = '-'; state.q4 = state.q4.filter(v => v !== label); }
+    else { btn.textContent = '-'; state.q4 = state.q4.filter(function(v) { return v !== label; }); }
     updateProgress();
   }
 
   function updateTimeSlider() {
     const val = parseInt(document.getElementById('timeSlider').value);
-    document.getElementById('timeDeclaration').innerHTML = `나는 주에 <span style="color:#6366f1;">${val}시간</span>을 투자하겠습니다.`;
+    document.getElementById('timeDeclaration').innerHTML = '나는 일주일에 <span style="color:#6366f1;">' + val + '시간</span>을 투자하겠습니다.';
     let desc = '';
     if (val <= 3) desc = '하루 약 25분 💡';
     else if (val <= 5) desc = '하루 약 40분 🙂';
@@ -332,7 +338,7 @@
     if (!q3) missing.push('만들고 싶은 서비스');
     if (state.q4.length === 0) missing.push('작업 가능 시간대');
     if (!q5) missing.push('4주 뒤 나에게 한마디');
-    if (!q7) missing.push('동기분들께 한마디');
+    if (!q7) missing.push('동기들에게 한마디');
     if (missing.length > 0) { showToast('⚠️ 미입력: ' + missing.join(', ')); return; }
     const btn = document.getElementById('submitBtn');
     btn.disabled = true; btn.textContent = '제출 중... ⏳';
